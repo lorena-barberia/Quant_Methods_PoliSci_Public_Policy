@@ -1,0 +1,80 @@
+project:
+  type: website        # diz ao Quarto que isto é um site (e não um documento só)
+  output-dir: docs     # "docs" = o Quarto gera o site na pasta docs/, de onde o GitHub Pages vai publicar.
+                       #   (o padrão do Quarto seria "_site", que o Pages não reconhece)
+
+lang: pt               # textos automáticos do quarto em português
+
+#------------ esqueleto dos cliques do site e qual o site
+
+website:
+  title: "Métodos Quantitativos · FLP 406 / FLS 5028"   # ESCOLHA: nome no canto da barra de cima
+  site-url: "https://lorena-barberia.github.io/Quant_Methods_PoliSci_Public_Policy/"
+  repo-url: "https://github.com/lorena-barberia/Quant_Methods_PoliSci_Public_Policy"
+  search: true                  # true = com buscador; false = sem buscador
+  page-navigation: true         # true = setas "anterior / próxima" no pé de cada página - achei que deixa bem intuitivo
+  back-to-top-navigation: true  # true clicar em link para voltar ao topo
+  
+#------------ a parte das barras em cima
+
+  navbar:
+    background: primary   # opções disponíveis: primary, secondary, light, dark, cor específica - ex: "#1d4e89"
+    # logo: imagens_logo/usp.png   # tirar o "#" quando tiver o arquivo do logo da usp (se tivermos)
+    left:                 # left - cada item aqui esteja em uma aba
+      - text: "Início"
+        href: index.qmd
+      - text: "Programa"
+        href: programa/index.qmd
+      - text: "Labs"
+        href: labs/index.qmd
+      # para nova abas futuro: padrão é: "- text / href" 
+    right:                # itens alinhados na direita
+      - icon: translate   # menu de idioma + as configurações necessárias (copiei no google)
+        text: "Idioma"    
+        menu:
+          - text: "Português (original)"
+            href: "https://lorena-barberia.github.io/Quant_Methods_PoliSci_Public_Policy/"
+          - text: "English (tradução automática)"
+            href: "https://lorena--barberia-github-io.translate.goog/Quant_Methods_PoliSci_Public_Policy/?_x_tr_sl=pt&_x_tr_tl=en&_x_tr_hl=en"
+          - text: "Español (traducción automática)"
+            href: "https://lorena--barberia-github-io.translate.goog/Quant_Methods_PoliSci_Public_Policy/?_x_tr_sl=pt&_x_tr_tl=es&_x_tr_hl=es"
+      - icon: github      # apagar as linhas se não quiser o ícone do GitHub
+        href: "https://github.com/lorena-barberia/Quant_Methods_PoliSci_Public_Policy"
+        
+# --- sumarário na esquerda com clicável
+
+  sidebar:
+    - id: programa        
+      title: "Programa"
+      style: "docked"     # estilo do sumário - "docked" (colado) - "floating" (solto)
+      contents:           # itens do dentro do sumário 
+        - programa/index.qmd
+        # as aulas entram aqui, agrupadas por parte:
+        # - section: "Parte I · Fundamentos matemáticos"
+        #   contents:
+        #     - programa/aula-01.qmd
+        #     - programa/aula-02.qmd
+
+    - id: labs
+      title: "Labs"
+      style: "docked"
+      contents:
+        - labs/index.qmd
+        # labs entram aqui.
+        
+# ----- rodapé 
+
+  page-footer:
+    left: "Universidade de São Paulo · FFLCH · Departamento de Ciência Política"
+    right: "Professora Doutora Lorena Guadalupe Barberia"
+
+# ------ aparência
+
+format:
+  html:
+    theme:
+      light: cosmo    # tipos: cosmo, flatly, litera, lumen, lux, minty, pulse, sandstone, simplex, spacelab, united, yeti, zephyr
+      dark: darkly    # tipos: darkly, cyborg, slate, solar, superhero // sem escuro - trocar as linhas theme/light/dark >> para >> theme: cosmo
+    toc: true                 # true > sumário na página com os títulos 
+    toc-location: right       # right 
+    toc-title: "Nesta página"

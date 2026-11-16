@@ -1,0 +1,457 @@
+::: titlepage
+Universidade de São Paulo
+
+Faculdade de Filosofia, Letras e Ciências Humanas
+
+Departamento de Ciência Política
+
+**Métodos Quantitativos Aplicados à\
+Ciência Política e à Análise de\
+Políticas Públicas**
+
+FLP 406 FLS 5028
+
+Programa da disciplina --- 2027
+
+Profa. Dra. Lorena G. Barberia
+
+[lorenabarberia\@usp.br](mailto:lorenabarberia@usp.br){.email}
+
+Monitores
+
+Dara Aparecida Vilela Pinto
+
+[Turma ?](mailto:vileladara@usp.br)
+
+Felipe José Miguel Garcia
+
+[Turma ?](mailto:felipejmgarcia@usp.br)
+
+Flora Araujo Costa
+
+[Turma ?](mailto:floraaraujo@usp.br)
+
+Gabriel Pinho Brochado
+
+[Turma ?](mailto:gabrielpinho@usp.br)
+
+Gabriel Rodrigues
+
+[Turma ?](mailto:rds.gabs@usp.br)
+
+Versão de 2026-11-13
+:::
+
+# Informações da Disciplina
+
+|  |  |
+|:---|:---|
+| Graduação | **FLP 406** --- Métodos e Técnicas de Pesquisa em Ciência Política |
+| Pós-graduação | **FLS 5028** --- oferta conjunta, com exigência adicional |
+| Semestre | 1 2027 |
+| Docente | Profa. Dra. Lorena G. Barberia |
+| Contato | [lorenabarberia\@usp.br](mailto:lorenabarberia@usp.br){.email} |
+| Carga horária | 4 créditos-aula (a confirmar junto à Secretaria) |
+| Formato semanal | 1 aula expositiva + 1 laboratório em Stata |
+
+As duas turmas assistem às mesmas aulas e fazem os mesmos laboratórios e provas. Os alunos de FLS 5028 têm leituras adicionais marcadas com **\[PG\]** e entregam uma nota de pesquisa (*research note*).
+
+# Visão Geral do Curso
+
+Ao final do semestre, o aluno dominará a teoria da probabilidade necessária para compreender a inferência estatística, e será capaz de estimar e interpretar modelos de regressão aplicados a questões de ciência política e de avaliação de políticas públicas.
+
+A disciplina se organiza em 14 tópicos distribuídos em quatro partes cumulativas:
+
+1.  **Fundamentos matemáticos (Tópicos 1--2).** Notação, funções, cálculo diferencial e integral, álgebra matricial.
+
+2.  **Probabilidade (Tópicos 3--8).** Esperança condicional, a Lei de Grande Números e o Teorema do Limite Central.
+
+3.  **Dos dados à inferência (Tópicos 9--10).** Estatística descritiva como estimação; estimação, intervalos de confiança e testes de hipóteses.
+
+4.  **O modelo de regressão linear (Tópicos 11--14).** Do modelo bivariado aos diagnósticos e à interpretação de resultados.
+
+O curso parte do princípio de que estatística se aprende fazendo. Cada tópico combina aula expositiva e laboratórios.
+
+# Objetivos de aprendizagem
+
+## Todos os alunos (FLP 406 e FLS 5028) {#todos-os-alunos-flp-406-e-fls-5028 .unnumbered}
+
+Ao final da disciplina, o aluno deve ser capaz de:
+
+1.  Ler uma equação de um artigo publicado e traduzi-la em uma frase em português que explique o que a função ou o modelo afirma.
+
+2.  Calcular probabilidades condicionais e aplicar a Regra de Bayes a problemas substantivos de política e de saúde pública.
+
+3.  Identificar a distribuição de probabilidade apropriada a um processo gerador de dados e calcular sua esperança e variância.
+
+4.  Explicar o que é esperança condicional e por que ela é o objeto que a regressão estima.
+
+5.  Enunciar a Lei dos Grandes Números e o Teorema Central do Limite e explicar por que justificam a inferência.
+
+6.  Interpretar corretamente intervalos de confiança e valores-p, reconhecendo os erros de leitura mais comuns na literatura.
+
+7.  Derivar o estimador de Mínimo Quadrados Ordinários (MQO) para o caso bivariado e explicar o que cada pressuposto garante.
+
+8.  Estimar modelos de regressão múltipla no Stata e interpretar coeficientes, erros-padrão, intervalos de confiança e medidas de ajuste.
+
+9.  Apresentar resultados em quantidades de interesse substantivo --- efeitos marginais, valores previstos, primeiras diferenças.
+
+10. Produzir análise reproduzível: do-files comentados, dados documentados, resultados que outra pessoa consegue replicar.
+
+## Objetivos adicionais (FLS 5028) {#objetivos-adicionais-fls-5028 .unnumbered}
+
+Além dos anteriores, o aluno de pós-graduação deve ser capaz de:
+
+1.  Identificar um problema de especificação ou de inferência em trabalho publicado e sustentar o diagnóstico com análise própria.
+
+# Público-alvo e pré-requisitos
+
+A disciplina é oferecida conjuntamente à graduação (**FLP 406**) e à pós-graduação (**FLS 5028**) em Ciência Política e em áreas afins de análise de políticas públicas. Todos acompanham o mesmo conteúdo, os mesmos laboratórios e as mesmas provas; os alunos de FLS 5028 têm leituras adicionais marcadas **\[PG\]** e entregam uma nota de pesquisa.
+
+**Pré-requisito formal:** MAE0116 --- Noções de Estatística, ou disciplina equivalente.
+
+**Diagnóstico inicial.** Na primeira semana os alunos respondem a um questionário diagnóstico curto, sem nota, sobre notação e álgebra. O resultado orienta a calibragem dos laboratórios iniciais e identifica quem deve procurar o monitor desde o início.
+
+**Conhecimento de Stata não é pré-requisito.** O software é ensinado a partir do primeiro laboratório.
+
+# Metodologia
+
+Cada tópico ocupa uma semana e se divide em aula expositiva e laboratório. A ênfase está na aprendizagem ativa: o tempo de exposição formal é mantido no mínimo necessário para que o aluno consiga trabalhar sozinho no laboratório.
+
+| **Momento** | **Duração** | **O que acontece** |
+|:---|:---|:---|
+| Aula expositiva | $\sim$<!-- -->2h | Conceito, derivação quando necessária, e um exemplo substantivo de ciência política ou de políticas públicas |
+| Laboratório | $\sim$<!-- -->2h | Aplicação em Stata sobre dados reais, em duplas, com do-file guiado |
+| Trabalho individual | --- | Conclusão do laboratório, entregue antes da aula seguinte |
+
+# Monitorias
+
+As monitorias são parte integrante da disciplina, e não um recurso opcional de apoio. A presença é obrigatória e registrada junto com a das aulas expositivas. É nas monitorias que se faz boa parte do trabalho prático do curso --- aplicação em Stata, discussão dos exercícios da semana e esclarecimento das derivações apresentadas em aula ---, de modo que a ausência compromete diretamente a entrega do laboratório correspondente. Ausências justificadas devem ser comunicadas à docente com antecedência.
+
+# Software e organização do trabalho
+
+Todo o curso é ministrado em **Stata**. Os dados dos laboratórios são disponibilizados em formato `.dta` e os do-files de apoio são distribuídos antes de cada laboratório.
+
+**Exigência de do-file.** A partir do Tópico 2, toda entrega é feita por do-file, nunca por comandos digitados diretamente no console. O do-file deve rodar do início ao fim em uma sessão limpa do Stata e produzir os resultados entregues. Esta exigência é avaliada em todos os laboratórios.
+
+**Estrutura de pastas exigida.** Cada entrega segue a mesma organização:
+
+```         
+nome-sobrenome-lab-NN/
+  dados/        dados originais, nunca modificados
+  codigo/       do-files numerados (01-limpeza.do, 02-analise.do)
+  resultados/   tabelas e graficos gerados pelo codigo
+  LEIAME.txt    o que rodar, em que ordem, e com qual versao do Stata
+```
+
+**Comandos centrais do curso.** O curso ensina explicitamente `regress`, `margins`, `marginsplot`, `estimates table` e as famílias de testes de diagnóstico, além das funções de distribuição usadas na Parte II. A interpretação de resultados (Tópico 14) é construída sobre `margins` e `marginsplot`, nativos do Stata, e não sobre o pacote Clarify --- este último permanece como leitura conceitual.
+
+**Recursos de apoio em Stata:**
+
+- Germán Rodríguez, *Stata Tutorial*, Princeton University --- <https://data.princeton.edu/stata/>
+
+- UCLA OARC Statistical Methods and Data Analytics --- <https://stats.oarc.ucla.edu/stata/>
+
+# Avaliação
+
+A avaliação difere entre os dois níveis. Alunos de graduação (**FLP 406**) são avaliados por laboratórios e provas. Alunos de pós-graduação (**FLS 5028**) têm, além disso, uma nota de pesquisa.
+
++---------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Componente**            | **FLP 406**                                                              | **FLS 5028**                                                             |
++:==========================+:========================================================================:+:========================================================================:+
+| 13 laboratórios avaliados | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+|                           |                                                                          |                                                                          |
+|                           |  %                                                                       |  %                                                                       |
++---------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Prova parcial (semana 9)  | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+|                           |                                                                          |                                                                          |
+|                           |  %                                                                       |  %                                                                       |
++---------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Prova final (semana 16)   | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+|                           |                                                                          |                                                                          |
+|                           |  %                                                                       |  %                                                                       |
++---------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Nota de pesquisa          | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+|                           |                                                                          |                                                                          |
+|                           |                                                                          |  %                                                                       |
++---------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Total**                 | **100%**                                                                 | **100%**                                                                 |
++---------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+*Os pesos serão definidos pela docente antes da divulgação do programa.*
+
+**Laboratórios.** Cada tópico tem um laboratório, e o laboratório é a forma de avaliação contínua do curso --- não há listas de exercícios separadas. O trabalho começa em sala, em duplas, e é concluído individualmente até a aula seguinte. Cada entrega consiste em um documento e/ou um do-file comentado e nas respostas que ele gera. São 13 laboratórios avaliados: o da semana 1 é diagnóstico e não recebe nota, e não há laboratório nas semanas de prova.
+
+Os laboratórios 1 a 7 acompanham a matemática e a probabilidade e exigem mais trabalho a lápis do que computacional; os laboratórios 8 a 13 invertem essa proporção.
+
+**Prova parcial --- semana 9.** Escrita e sem consulta, cobre os Tópicos 1 a 8: fundamentos matemáticos e todo o bloco de probabilidade. Não cobre regressão, que ainda não terá sido apresentada. Avalia derivação, cálculo de probabilidades, manipulação de distribuições e interpretação. Não exige memorização de fórmulas, fornecidas em formulário anexo.
+
+**Prova final --- semana 16.** Escrita e sem consulta, cobre os Tópicos 9 a 14: estatística descritiva, inferência e o modelo de regressão linear. Pressupõe o domínio da Parte II, sem avaliá-la diretamente. Inclui a leitura e a crítica dos resultados produzidos por uma regressão linear.
+
+## Nota de pesquisa --- apenas para alunos inscritos na FLS 5028 {#nota-de-pesquisa-apenas-para-alunos-inscritos-na-fls-5028 .unnumbered}
+
+Uma nota curta (*research note*) (6 a 10 páginas) sobre um problema metodológico identificado em trabalho publicado: uma escolha de especificação questionável, uma interação mal interpretada, um erro-padrão inadequado à estrutura dos dados, uma inferência que os dados não sustentam. A nota deve **identificar o problema, explicar por que ele importa e sustentar o argumento com análise própria** --- reestimação, simulação ou demonstração algébrica, conforme o caso.
+
+Não se trata de uma replicação completa nem de um artigo original: o objetivo é exercitar a leitura crítica.
+
+| **Etapa** | **Prazo** | **O que se entrega** |
+|:---|:---|:---|
+| Proposta | Semana 11 | Artigo escolhido, problema identificado em um parágrafo, evidência disponível |
+| Entrega final | Semana 15 | Nota + código e dados de apoio |
+
+**Critérios de correção da nota de pesquisa:** correção do diagnóstico metodológico (35%), qualidade da análise de apoio (30%), clareza do argumento (20%), reprodutibilidade do código (15%).
+
+# Replicação e integridade acadêmica
+
+A transparência é tratada como competência técnica avaliável.
+
+**Padrão de reprodutibilidade exigido.** Toda análise entregue deve satisfazer três condições:
+
+1.  Os dados originais não são modificados --- toda transformação ocorre em código.
+
+2.  O código roda do início ao fim em uma sessão limpa, sem intervenção manual.
+
+3.  O laboratório não é produzido por AI.
+
+**Uso de inteligência artificial generativa.** Ferramentas de IA podem ser usadas para limpar código, esclarecer conceitos e revisar a escrita. Não podem ser usadas para gerar a análise substantiva nem o texto interpretativo entregue como trabalho próprio. Quando uma ferramenta de IA for usada em qualquer entrega, o LEIAME deve registrar qual ferramenta, em que etapa e com que finalidade. A regra operacional é simples: o aluno deve ser capaz de explicar e defender cada linha de código entregue, em arguição oral, sem consultar a ferramenta.
+
+# Programa
+
+## Parte I --- Fundamentos Matemáticos (Tópicos 1--2) {#parte-i-fundamentos-matemáticos-tópicos-12 .unnumbered}
+
+Duas semanas de ferramental matemático.
+
+## Tópico 1 --- Ganhando confiança com a notação {#tópico-1-ganhando-confiança-com-a-notação .unnumbered}
+
+**Conteúdo.** Tradução de equações em parágrafos escritos; ordem das operações; fatoração, cancelamento, expansão, potências e raízes; funções, linearidade e não-linearidade; indexação simples e por grupo; somatório e produto.
+
+**Por que importa .** O operador de somatório aparece em quase toda semana do curso. A notação de função introduzida aqui é a mesma das funções de densidade do Tópico 6.
+
+**Laboratório.** Explicando teorias com funções.
+
+**Leituras.** Gill, cap. 1; Moore e Siegel, cap. 1--3; Wooldridge, Apêndice A.
+
+## Tópico 2 --- Cálculo diferencial, integral e álgebra matricial {#tópico-2-cálculo-diferencial-integral-e-álgebra-matricial .unnumbered}
+
+**Conteúdo.** Derivada: noção e regras básicas; regra do produto, do quociente e da cadeia; derivadas parciais; otimização irrestrita (condição de primeira ordem). Noção de integral definida como área sob a curva. Matrizes: adição, multiplicação, transposição, inversa; vetores.
+
+**Por que importa.** A condição de primeira ordem minimiza a soma dos quadrados dos resíduos (Tópico 11). A notação matricial permite escrever o estimador de MQO em uma linha:
+
+$$\hat{\boldsymbol{\beta}} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$$
+
+**Laboratório.** Otimização numérica à mão e em Stata: minimizar a soma dos quadrados por busca em grade e comparar com a solução analítica. Áreas sob curvas por aproximação numérica. Operações matriciais com `matrix` e `mata`.
+
+**Leituras.** Gill, cap. 3--4; Moore e Siegel, cap. 5, 6, 12; **\[PG\]** Moore e Siegel, cap. 15; **\[PG\]** Wooldridge, Apêndice D.
+
+## Parte II --- Probabilidade (Tópicos 3--8) {#parte-ii-probabilidade-tópicos-38 .unnumbered}
+
+## Tópico 3 --- Fundamentos da probabilidade {#tópico-3-fundamentos-da-probabilidade .unnumbered}
+
+**Conteúdo.** Experimento aleatório, espaço amostral e eventos; operações com eventos; axiomas de Kolmogorov e as regras que deles decorrem; regra da adição e da complementaridade; métodos de contagem --- princípio multiplicativo, permutações e combinações; interpretações clássica, frequentista e subjetiva da probabilidade.
+
+**Por que importa.** Por que a interpretação escolhida importa: a divergência entre frequentistas e bayesianos sobre o que um intervalo de confiança afirma depende desta base teórica.
+
+**Laboratório.** Simulação de experimentos aleatórios em Stata; frequência relativa convergindo para probabilidade; problemas de contagem aplicados a amostragem.
+
+**Leituras.** Blitzstein e Hwang, cap. 1 --- Probability and Counting; Gill, cap. 7; Moore e Siegel, cap. 9.
+
+## Tópico 4 --- Probabilidade condicional, independência e Regra de Bayes {#tópico-4-probabilidade-condicional-independência-e-regra-de-bayes .unnumbered}
+
+**Conteúdo.** Probabilidade condicional e sua definição; regra da multiplicação; independência e independência condicional; lei da probabilidade total; Regra de Bayes; razões de chances e sua interpretação.
+
+**Aplicações.** Sensibilidade, especificidade e valor preditivo de testes diagnósticos em saúde pública; a falácia da taxa-base; erro de pesquisa eleitoral.
+
+**Por que importa.** A esperança condicional, que aparece no Tópico 8, é a definição formal do que uma reta de regressão estima.
+
+**Laboratório.** Tabelas de contingência e probabilidades condicionais a partir de dados reais; simulação da falácia da taxa-base com prevalências.
+
+**Leituras.** Blitzstein e Hwang, cap. 2 --- Conditional Probability; Gill, cap. 7; Agresti, cap. 2.
+
+## Tópico 5 --- Variáveis aleatórias e distribuições discretas {#tópico-5-variáveis-aleatórias-e-distribuições-discretas .unnumbered}
+
+**Conteúdo.** Variável aleatória como função; função de massa de probabilidade e função de distribuição acumulada; esperança como operador e suas propriedades; variância e desvio-padrão; distribuições Bernoulli, binomial, geométrica e Poisson, com os processos que cada uma descreve.
+
+**Por que importa.** As propriedades do operador esperança aprendidas aqui são o que torna demonstrável a não-tendenciosidade do estimador de MQO (Tópico 11). A distinção entre uma variável aleatória e sua realização é a mesma distinção entre erro e resíduo, que reaparece em toda a Parte IV.
+
+**Laboratório.** Gerar e visualizar distribuições discretas em Stata; verificar propriedades do operador esperança por simulação; ajustar uma Poisson a contagens reais de eventos políticos.
+
+**Leituras.** Blitzstein e Hwang, cap. 3 --- Random Variables and their Distributions; cap. 4 --- Expectation; Moore e Siegel, cap. 10.
+
+## Tópico 6 --- Distribuições contínuas {#tópico-6-distribuições-contínuas .unnumbered}
+
+**Conteúdo.** Variáveis aleatórias contínuas; função densidade de probabilidade e sua relação com a integral; função de distribuição acumulada; distribuições uniforme, normal e exponencial; padronização e escores-z; percentis de uma distribuição; aproximação normal.
+
+**Conexão com o Tópico 2.** A densidade só se torna inteligível com a integral como área acumulada --- motivo pelo qual o cálculo foi posicionado na segunda semana do curso.
+
+**Laboratório.** Funções de distribuição em Stata (`normal()`, `normalden()`, `invnormal()`); cálculo de probabilidades sob a curva normal; comparação entre densidade teórica e histograma empírico.
+
+**Leituras.** Blitzstein e Hwang, cap. 5 --- Continuous Random Variables; Moore e Siegel, cap. 11; Gill, cap. 8.
+
+## Tópico 7 --- Distribuições conjuntas, covariância e correlação {#tópico-7-distribuições-conjuntas-covariância-e-correlação .unnumbered}
+
+**Conteúdo.** Distribuições conjuntas, marginais e condicionais; independência de variáveis aleatórias; covariância e correlação como parâmetros populacionais; esperança e variância de somas e de combinações lineares; funções de variáveis aleatórias.
+
+**Por que importa.** A covariância definida aqui é o parâmetro populacional que o numerador do coeficiente de regressão estima (Tópico 11). As regras de variância de combinações lineares são o que permite derivar o erro-padrão de um estimador.
+
+**Laboratório.** Simulação de distribuições conjuntas com correlação controlada; verificação empírica das regras de variância de somas; construção de uma matriz de covariância.
+
+**Leituras.** Blitzstein e Hwang, cap. 7 --- Joint Distributions; Moore e Siegel, cap. 11; **\[PG\]** Wooldridge, Apêndice B.
+
+## Tópico 8 --- Esperança condicional e teoremas limite {#tópico-8-esperança-condicional-e-teoremas-limite .unnumbered}
+
+**Conteúdo.** Esperança condicional e suas propriedades; a lei da esperança iterada; a esperança condicional como melhor previsor; desigualdades (Markov, Chebyshev); Lei dos Grandes Números; Teorema Central do Limite; convergência em probabilidade e em distribuição, no nível intuitivo.
+
+**Por que importa.** A esperança condicional definida aqui é exatamente o que a regressão estima. Ao chegar ao Tópico 11, a reta de regressão pode ser compreendida como uma esperança condicional:
+
+$$E[Y \mid X = x] = \beta_0 + \beta_1 x$$
+
+**Laboratório.** Visualização de esperanças condicionais por bin scatter, antecipando graficamente a reta de regressão; simulação do TCL a partir de uma população assimétrica conhecida, variando o tamanho da amostra.
+
+**Leituras.** Blitzstein e Hwang, cap. 9 --- Conditional Expectation; cap. 10 --- Inequalities and Limit Theorems; Agresti, cap. 4.
+
+::::: center
+:::: lrbox
+::: minipage
+**PROVA PARCIAL --- Semana 9**
+
+Escrita, sem consulta, cobrindo os Tópicos 1 a 8 --- fundamentos matemáticos e todo o bloco de probabilidade. Formulário fornecido. Não há laboratório avaliado nesta semana.
+:::
+::::
+:::::
+
+## Parte III --- Dos Dados à Inferência (Tópicos 9--10) {#parte-iii-dos-dados-à-inferência-tópicos-910 .unnumbered}
+
+## Tópico 9 --- Estatística descritiva {#tópico-9-estatística-descritiva .unnumbered}
+
+**Conteúdo.** Amostra e população; estatística amostral como estimador de um parâmetro populacional; média, variância e desvio-padrão amostrais; por que o denominador é $n-1$; percentis e quartis; PDF e CDF empíricas; escores-z; covariância e correlação amostrais; diferença de médias versus média das diferenças; princípios de visualização.
+
+**O ganho de ordenação.** Cada quantidade desta semana já tem contrapartida populacional conhecida dos Tópicos 5 a 8. A média amostral estima $E[X]$; a covariância amostral estima $\operatorname{Cov}(X,Y)$. Os alunos não aprendem fórmulas novas --- aprendem a estimar objetos que já compreendem.
+
+**Laboratório.** `summarize, detail`, `tabstat`, `histogram`, `kdensity`, `correlate`; comparação entre densidade empírica e teórica; exercício crítico com a mesma variável resumida de quatro maneiras.
+
+**Leituras.** Agresti, cap. 3; Kellstedt e Whitten, cap. 6 --- Getting to Know Your Data; Gill, cap. 8.
+
+## Tópico 10 --- Estimação, intervalos de confiança e testes de hipóteses {#tópico-10-estimação-intervalos-de-confiança-e-testes-de-hipóteses .unnumbered}
+
+**Conteúdo.** Amostragem aleatória; a distribuição amostral de um estimador; propriedades de um bom estimador --- não-tendenciosidade, eficiência, consistência; erro-padrão; construção e interpretação de intervalos de confiança; lógica do teste de hipóteses; erros tipo I e tipo II; poder estatístico; o que um valor-p é e o que não é.
+
+**Laboratório.** Verificação empírica da cobertura de 95% dos intervalos de confiança; `ttest` e `prtest` em dados reais.
+
+**Leituras.** Kellstedt e Whitten, cap. 7 e 8; Agresti, cap. 5 e 6; Wooldridge, Apêndice C; Gelman e Stern (2006).
+
+## Parte IV --- O Modelo de Regressão Linear (Tópicos 11--14) {#parte-iv-o-modelo-de-regressão-linear-tópicos-1114 .unnumbered}
+
+## Tópico 11 --- Regressão bivariada e seus pressupostos {#tópico-11-regressão-bivariada-e-seus-pressupostos .unnumbered}
+
+**Conteúdo.** A regressão como estimação da esperança condicional do Tópico 8; derivação do estimador de MQO pela condição de primeira ordem; interpretação de intercepto e inclinação; resíduos versus erros; pressupostos do modelo clássico e o que cada um garante; Teorema de Gauss-Markov e o significado de "BLUE".
+
+**Laboratório.** `regress` com uma variável explicativa; leitura completa da saída do Stata, campo por campo; gráfico de dispersão com reta ajustada; análise gráfica de resíduos.
+
+**Leituras.** Kellstedt e Whitten, cap. 9; Gujarati e Porter, cap. 2 e 3; Wooldridge, cap. 2.
+
+## Tópico 12 --- Inferência no modelo de regressão {#tópico-12-inferência-no-modelo-de-regressão .unnumbered}
+
+**Conteúdo.** Distribuição amostral dos coeficientes estimados; erro-padrão do coeficiente e o que o faz crescer ou encolher; teste $t$ e intervalo de confiança para um coeficiente; teste $F$ e hipóteses conjuntas; $R^2$ e $R^2$ ajustado, com suas limitações.
+
+**Laboratório.** `test` e `testparm` para hipóteses conjuntas; construção manual do teste $t$ a partir dos componentes da saída; leitura crítica de uma tabela de regressão publicada.
+
+**Leituras.** Gujarati e Porter, cap. 4 e 5; Wooldridge, cap. 4; Beck (2010).
+
+## Tópico 13 --- Regressão múltipla, variáveis qualitativas e interações {#tópico-13-regressão-múltipla-variáveis-qualitativas-e-interações .unnumbered}
+
+**Conteúdo.** De uma para $k$ variáveis explicativas; a interpretação *ceteris paribus* e sua relação com a independência condicional do Tópico 4; viés de variável omitida --- direção e magnitude; variáveis dummy e a armadilha da dummy; categorias de referência; termos interativos e por que o coeficiente de um termo constitutivo muda de significado na presença da interação; efeitos marginais condicionais.
+
+**Laboratório.** Construção incremental de modelos; demonstração empírica do viés de variável omitida; notação de variáveis fatoriais (`i.`, `c.`, `##`); `margins` e `marginsplot` para efeitos marginais condicionais; replicação de um resultado de Samuels (2000).
+
+**Leituras.** Kellstedt e Whitten, cap. 10 e 11; Gujarati e Porter, cap. 7, 8 e 9; Wooldridge, cap. 3 e 7; Brambor, Clark e Golder (2006); Samuels (2000); **\[PG\]** Angrist e Pischke, cap. 3; **\[PG\]** Braumoeller (2004).
+
+## Tópico 14 --- Diagnósticos e interpretação de resultados {#tópico-14-diagnósticos-e-interpretação-de-resultados .unnumbered}
+
+**Conteúdo.** Multicolinearidade: efeito sobre erros-padrão e por que raramente é o problema que o aluno imagina; VIF. Heterocedasticidade: consequências, detecção e erros-padrão robustos e agrupados. Forma funcional: logs e quadráticos. Interpretação: por que uma tabela de coeficientes não é uma resposta; valores previstos, primeiras diferenças e efeitos marginais; comunicação da incerteza.
+
+**Nota sobre software.** A referência conceitual é King, Tomz e Wittenberg (2000), e o curso adota os comandos nativos `margins` e `marginsplot`, que incorporaram a lógica originalmente implementada no pacote Clarify. O artigo continua obrigatório; o pacote não é mais utilizado.
+
+**Laboratório.** `estat vif`; `estat hettest`; comparação entre `regress`, `regress, robust` e `regress, cluster()`; `margins, at()` e `margins, dydx()`; exercício de reescrita de um parágrafo de resultados em linguagem substantiva.
+
+**Leituras.** Gujarati e Porter, cap. 10 e 11; Wooldridge, cap. 6 e 8; King, Tomz e Wittenberg (2000); **\[PG\]** Angrist e Pischke, cap. 8.
+
+::::: center
+:::: lrbox
+::: minipage
+**PROVA FINAL --- Semana 16**
+
+Escrita, sem consulta, cobrindo os Tópicos 9 a 14 --- estatística descritiva, inferência e o modelo de regressão linear. Pressupõe o conteúdo da Parte II, mas não o avalia diretamente. Formulário fornecido.
+
+**\[FLS 5028\]** A nota de pesquisa dos alunos de pós-graduação é entregue na semana 15.
+:::
+::::
+:::::
+
+# Calendário resumido
+
+O semestre consiste em uma disciplina de 16 semanas: 14 tópicos e duas semanas de prova.
+
+::: longtable
+\@cl L8.0cm L4.2cm\@ **Sem.** & **Parte** & **Tópico** & **Entrega**\
+**Sem.** & **Parte** & **Tópico** & **Entrega**\
+& I & 1. Ganhando confiança com a notação & Lab diagnóstico (sem nota)\
+2 & I & 2. Cálculo e álgebra matricial & Lab 1\
+3 & II & 3. Fundamentos da probabilidade & Lab 2\
+4 & II & 4. Probabilidade condicional e Bayes & Lab 3\
+5 & II & 5. Variáveis aleatórias e distribuições discretas & Lab 4\
+6 & II & 6. Distribuições contínuas & Lab 5\
+7 & II & 7. Distribuições conjuntas e covariância & Lab 6\
+8 & II & 8. Esperança condicional e teoremas limite & Lab 7\
+9 & --- & **PROVA PARCIAL** (Tópicos 1--8) & Prova\
+10 & III & 9. Estatística descritiva e dados na prática & Lab 8\
+11 & III & 10. Estimação, IC e testes de hipóteses & Lab 9 **\[PG\]** proposta da nota\
+12 & IV & 11. Regressão bivariada e seus pressupostos & Lab 10\
+13 & IV & 12. Inferência no modelo de regressão & Lab 11\
+14 & IV & 13. Regressão múltipla, qualitativas e interações & Lab 12\
+15 & IV & 14. Diagnósticos e interpretação de resultados & Lab 13 **\[PG\]** nota de pesquisa\
+16 & --- & **PROVA FINAL** (Tópicos 9--14) & Prova\
+:::
+
+**Distribuição dos laboratórios.** O laboratório da semana 1 é diagnóstico e não recebe nota; não há laboratório nas semanas 9 e 16, reservadas às provas. Restam 13 laboratórios avaliados.
+
+**Observação sobre o calendário da nota de pesquisa.** Alunos de pós-graduação propõem o problema metodológico na semana 11, antes de terem estimado sua primeira regressão no curso. Isso é deliberado: o diagnóstico de um problema de especificação ou de inferência depende mais da Parte II do que da Parte IV. Ainda assim, recomenda-se orientar a escolha para artigos cujo resultado principal seja estimado por MQO.
+
+# Bibliografia
+
+## Livros-texto principais {#livros-texto-principais .unnumbered}
+
+- Agresti, Alan. 2018. *Statistical Methods for the Social Sciences*. 5^a^ ed. Boston: Pearson.
+
+- Blitzstein, Joseph K., e Jessica Hwang. 2019. *Introduction to Probability*. 2^a^ ed. Boca Raton: Chapman and Hall/CRC. ISBN 9781138369917.
+
+- Gill, Jeff. 2006. *Essential Mathematics for Political and Social Research*. Cambridge: Cambridge University Press.
+
+- Gujarati, Damodar N., e Dawn C. Porter. 2009. *Basic Econometrics*. 5^a^ ed. Boston: McGraw-Hill Irwin.
+
+- Kellstedt, Paul M., e Guy D. Whitten. 2018. *The Fundamentals of Political Science Research*. 3^a^ ed. Cambridge: Cambridge University Press. ISBN 9781316642672.
+
+- Moore, Will H., e David A. Siegel. 2013. *A Mathematics Course for Political and Social Research*. Princeton: Princeton University Press.
+
+- Wooldridge, Jeffrey M. 2019. *Introductory Econometrics: A Modern Approach*. 7^a^ ed. Boston: Cengage.
+
+## Livros complementares {#livros-complementares .unnumbered}
+
+- Angrist, Joshua D., e Jörn-Steffen Pischke. 2009. *Mostly Harmless Econometrics: An Empiricist's Companion*. Princeton: Princeton University Press.
+
+## Artigos {#artigos .unnumbered}
+
+- Beck, Nathaniel. 2010. "Making Regression and Related Output More Helpful to Users." *The Political Methodologist* 18(1): 4--9.
+
+- Gelman, Andrew, e Hal Stern. 2006. "The Difference Between 'Significant' and 'Not Significant' is not Itself Statistically Significant." *The American Statistician* 60(4): 328--331.
+
+- King, Gary, Michael Tomz, e Jason Wittenberg. 2000. "Making the Most of Statistical Analyses: Improving Interpretation and Presentation." *American Journal of Political Science* 44(2): 341--355.
+
+## Tutoriais de Stata {#tutoriais-de-stata .unnumbered}
+
+- Baum, Christopher F. 2006. *An Introduction to Modern Econometrics Using Stata*. College Station: Stata Press.
+
+- Cameron, A. Colin, e Pravin K. Trivedi. 2010. *Microeconometrics Using Stata*. Ed. revisada. College Station: Stata Press.
+
+- Rodríguez, Germán. *Stata Tutorial*. Princeton University. <https://data.princeton.edu/stata/>
+
+- UCLA OARC. *Statistical Methods and Data Analytics --- Stata*. <https://stats.oarc.ucla.edu/stata/>
